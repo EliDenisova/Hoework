@@ -1,13 +1,26 @@
-﻿
-
-Console.WriteLine("Введите длину массива.");
+﻿Console.WriteLine("Введите длину массива.");
 
 int len = Convert.ToInt32(Console.ReadLine());
 
 int[] array = new int[len];
 
-randomFilling(array, 0, 100);
+randomFilling(array, -100, 100);
 arrayOutput(array);
+int count = countingOddPosition(array);
+Console.WriteLine(count);
+
+
+int countingOddPosition(int[] array)
+{
+    int count = 0;
+    for (int i = 1; i < array.Length; i += 2)
+    {
+        count += array[i];
+    }
+
+    return count;
+}
+
 
 void randomFilling(int[] arr, int min, int max)
 {
